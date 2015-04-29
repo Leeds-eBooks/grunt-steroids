@@ -39,6 +39,7 @@ module.exports = (grunt)->
       view
       module
       modules: discoverModuleDependencies module
+      snippets: # TODO
     }
 
   toAndroidFilepath = (filepath) -> filepath.replace /(\.android)?\.html$/, '.android.html'
@@ -50,6 +51,7 @@ module.exports = (grunt)->
         viewName: context.view
         moduleName: context.module
         modules: context.modules
+        snippets: context.snippets
     }
 
   determineDestinationLayoutAndSource = (destination, source, layoutPaths) ->
