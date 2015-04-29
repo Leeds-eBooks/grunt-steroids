@@ -1,6 +1,8 @@
 fs = require 'fs'
 
 module.exports = (grunt)->
+  snippets = grunt.file.read snippetPath for snippetPath in grunt.file.expand ['app/**/snippets/**/*.html']
+  # TODO resolve snippet filename conflicts by scoping to module folders
 
   grunt.loadNpmTasks "grunt-extend-config"
 
@@ -9,7 +11,7 @@ module.exports = (grunt)->
       app:
         expand: true
         cwd: 'app'
-        src: ['*/views/**/*.html', '!**/layout.*', '!**/*.android.html']
+        src: ['*/views/**/*.html', '!**/layout.*', '!**/*.android.html', '!**/snippets/**/*.html']
         dest: 'dist/app/'
   }
 
@@ -51,7 +53,8 @@ module.exports = (grunt)->
         viewName: context.view
         moduleName: context.module
         modules: context.modules
-        snippets: context.snippets
+        snippets
+        # snippets: getSnippets()
     }
 
   determineDestinationLayoutAndSource = (destination, source, layoutPaths) ->
