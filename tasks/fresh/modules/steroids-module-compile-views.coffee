@@ -1,7 +1,7 @@
 fs = require 'fs'
 
 module.exports = (grunt)->
-  snippets = grunt.file.read snippetPath for snippetPath in grunt.file.expand ['app/**/snippets/**/*.html']
+  snippets = (grunt.file.read snippetPath for snippetPath in grunt.file.expand ['app/**/snippets/**/*.html'])
   # TODO resolve snippet filename conflicts by scoping to module folders
 
   grunt.loadNpmTasks "grunt-extend-config"
@@ -41,7 +41,6 @@ module.exports = (grunt)->
       view
       module
       modules: discoverModuleDependencies module
-      snippets: # TODO
     }
 
   toAndroidFilepath = (filepath) -> filepath.replace /(\.android)?\.html$/, '.android.html'
@@ -101,4 +100,3 @@ module.exports = (grunt)->
             "app/#{context.module}/views/layout.html"
             "app/common/views/layout.html"
           ]
-
