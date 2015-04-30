@@ -11,7 +11,7 @@ module.exports = (grunt)->
       app:
         expand: true
         cwd: 'app'
-        src: ['*/views/**/*.html', '!**/layout.*', '!**/*.android.html', '!**/snippets/**/*.html']
+        src: ['*/views/**/*.html', '!**/layout.*', '!**/*.android.html', '!*/snippets/**/*.html']
         dest: 'dist/app/'
   }
 
