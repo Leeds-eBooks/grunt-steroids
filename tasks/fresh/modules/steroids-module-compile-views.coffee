@@ -15,7 +15,12 @@ module.exports = (grunt)->
       app:
         expand: true
         cwd: 'app'
-        src: ['*/views/**/*.html', '!**/layout.*', '!**/*.android.html', '!*/snippets/**/*.html']
+        src: [
+          '*/views/**/*.html'
+          '!**/layout.*'
+          '!**/*.android.html'
+          '!*/snippets/**/*.html'
+        ]
         dest: 'dist/app/'
   }
 
@@ -56,7 +61,7 @@ module.exports = (grunt)->
         viewName: context.view
         moduleName: context.module
         modules: context.modules
-        snippets
+        snippets: snippets
         # snippets: getSnippets()
     }
 
