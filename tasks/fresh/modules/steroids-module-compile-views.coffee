@@ -1,7 +1,11 @@
 fs = require 'fs'
 
 module.exports = (grunt)->
-  snippets = (grunt.file.read snippetPath for snippetPath in grunt.file.expand ['app/**/snippets/**/*.html'])
+  snippets = {}
+  addToObj = (obj, key, value) -> obj[key] = value
+
+  addToObj snippets (snippetPath.substring (snippetPath.lastIndexOf '/') (snippetPath.lastIndexOf '.')) (grunt.file.read snippetPath) for snippetPath in grunt.file.expand ['app/**/snippets/**/*.html']
+
   # TODO resolve snippet filename conflicts by scoping to module folders
 
   grunt.loadNpmTasks "grunt-extend-config"
