@@ -4,14 +4,15 @@ module.exports = (grunt)->
   snippets = {}
   addToObj = (obj, key, value) -> obj[key] = value
 
-  addToObj(
-    snippets
-    snippetPath.substring(
-      snippetPath.lastIndexOf('/') + 1
-      snippetPath.lastIndexOf '.'
+  for snippetPath in grunt.file.expand ['app/**/snippets/**/*.html']
+    addToObj(
+      snippets
+      snippetPath.substring(
+        snippetPath.lastIndexOf('/') + 1
+        snippetPath.lastIndexOf '.'
+      )
+      grunt.file.read snippetPath
     )
-    grunt.file.read snippetPath
-  ) for snippetPath in grunt.file.expand ['app/**/snippets/**/*.html']
 
   # TODO resolve snippet filename conflicts by scoping to module folders
 
@@ -94,7 +95,11 @@ module.exports = (grunt)->
 
   maybeRenderWithLayouts = (source, destination, context, layoutPaths) ->
     for destinationPath, {sourcePath, layoutPath} of determineDestinationLayoutAndSource(destination, source, layoutPaths)
-      content = grunt.file.read sourcePath
+      content = grunt.util._.template(grunt.file.read sourcePath) {
+        yield:
+          snippets: snippets
+      }
+
       if layoutPath?
         grunt.file.write destinationPath, (renderWithLayout layoutPath, content, context)
       else
