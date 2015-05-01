@@ -27,7 +27,7 @@ module.exports = (grunt)->
           '*/views/**/*.html'
           '!**/layout.*'
           '!**/*.android.html'
-          '!*/snippets/**/*.html'
+          '!**/snippets/**/*.html'
         ]
         dest: 'dist/app/'
   }
