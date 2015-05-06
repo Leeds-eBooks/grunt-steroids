@@ -14,8 +14,6 @@ module.exports = (grunt)->
       grunt.file.read snippetPath
     )
 
-  # TODO resolve snippet filename conflicts by scoping to module folders
-
   grunt.loadNpmTasks "grunt-extend-config"
 
   grunt.extendConfig {
@@ -70,7 +68,6 @@ module.exports = (grunt)->
         moduleName: context.module
         modules: context.modules
         snippets: snippets
-        # snippets: getSnippets()
     }
 
   determineDestinationLayoutAndSource = (destination, source, layoutPaths) ->
