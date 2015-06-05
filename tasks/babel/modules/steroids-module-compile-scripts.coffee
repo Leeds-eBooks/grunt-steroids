@@ -11,6 +11,7 @@ module.exports = (grunt)->
   grunt.registerTask "steroids-module-compile-scripts", "Compile CoffeeScript from app/*.coffee to dist/tmp/*.js", [
     "steroids-module-compile-babel"
     "steroids-module-compile-coffeescript"
+    "steroids-module-copy-javascript"
     "steroids-module-concat-javascript"
     "clean:tmp"
   ]

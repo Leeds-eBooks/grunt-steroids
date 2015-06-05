@@ -11,7 +11,7 @@ module.exports = (grunt)->
         www:
           expand:true
           cwd: 'www/'
-          src: ['**/*.*', '!**/*.coffee', '!**/*.scss', '!**/*.js']
+          src: ['**/*.*', '!**/*.coffee', '!**/*.scss', '!**/*.js', '**/*.min.js']
           dest: 'dist/'
 
     grunt.task.run "copy:www"

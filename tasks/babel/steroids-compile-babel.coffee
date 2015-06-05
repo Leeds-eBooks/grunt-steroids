@@ -11,7 +11,7 @@ module.exports = (grunt)->
         compile_www:
           expand: true
           cwd: "www/"
-          src: ["**/*.js"]
+          src: ["**/*.js", "!**/*.min.js"]
           dest: "dist/"
           ext: ".js"
 
