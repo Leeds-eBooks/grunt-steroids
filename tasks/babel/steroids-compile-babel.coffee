@@ -2,11 +2,11 @@
 module.exports = (grunt)->
 
   grunt.loadNpmTasks "grunt-babel"
-  # grunt.loadNpmTasks "grunt-extend-config"
+  grunt.loadNpmTasks "grunt-extend-config"
 
   grunt.registerTask "steroids-compile-babel", "Compile es6 files from  www/ to dist/ (for SPA)", ->
 
-    grunt.initConfig
+    grunt.extendConfig
       babel:
         compile_www:
           expand: true

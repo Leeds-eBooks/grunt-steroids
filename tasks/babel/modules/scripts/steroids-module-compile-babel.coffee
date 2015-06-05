@@ -1,7 +1,7 @@
 
 module.exports = (grunt)->
 
-  # grunt.loadNpmTasks "grunt-extend-config"
+  grunt.loadNpmTasks "grunt-extend-config"
   grunt.loadNpmTasks "grunt-babel"
 
   grunt.extendConfig {
@@ -14,5 +14,5 @@ module.exports = (grunt)->
         ext: '.js'
   }
 
-  grunt.registerTask "steroids-module-compile-coffeescript", "Compile CoffeeScript from app/*.coffee to dist/tmp/*.js", ->
-    grunt.task.run "coffee:modules"
+  grunt.registerTask "steroids-module-compile-babel", "Compile es6 files from app/*.js to dist/tmp/*.js", ->
+    grunt.task.run "babel:modules"

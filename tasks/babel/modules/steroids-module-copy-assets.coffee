@@ -3,7 +3,7 @@ module.exports = (grunt)->
 
   grunt.loadNpmTasks "grunt-extend-config"
 
-  grunt.extendConfig {
+  grunt.extendConfig
     "steroids-module-copy-assets":
       app:
         expand: true
@@ -11,9 +11,8 @@ module.exports = (grunt)->
         src: '*/assets/**/*'
         dest: 'dist/'
         filter: 'isFile'
-  }
 
-  grunt.registerMultiTask "steroids-module-copy-assets:app", "Copy static assets from app/*/assets/ to dist/", ->
+  grunt.registerMultiTask "steroids-module-copy-assets", "Copy static assets from app/*/assets/ to dist/", ->
     @files.forEach (file) ->
       # Remove the moduleName/assets part of the path and copy the file
       flatpath = file.dest.replace /dist\/[^\/]*\/assets/, 'dist/'
