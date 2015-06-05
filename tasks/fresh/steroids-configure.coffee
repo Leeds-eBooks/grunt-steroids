@@ -18,5 +18,5 @@ module.exports = (grunt)->
       throw new Error err if err?
       grunt.file.write distConfigJsonPath, json
       grunt.log.writeln "Parsed #{configXmlPath} and wrote corresponding data to #{distConfigJsonPath}."
-      
+
       done()

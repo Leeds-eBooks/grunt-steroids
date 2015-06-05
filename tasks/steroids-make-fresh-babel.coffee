@@ -1,12 +1,12 @@
 module.exports = (grunt) ->
   grunt.registerTask "steroids-make-fresh-babel", "Create the dist/ folder that is copied to the device, using babel on all js files.", ->
-    grunt.loadTasks("#{__dirname}/fresh/babel")
+    grunt.loadTasks("#{__dirname}/babel")
     grunt.task.run [
       "steroids-check-project"
       "steroids-clean-dist"
       "steroids-copy-www"
       "steroids-compile-coffee"
-      "steroids-compile-es6"
+      "steroids-compile-babel"
       "steroids-copy-components"
       "steroids-configure"
       "steroids-compile-modules"

@@ -15,4 +15,4 @@ module.exports = (grunt)->
           dest: "dist/"
           ext: ".js"
 
-    grunt.task.run "coffee:compile_www"
+    grunt.task.run "babel:compile_www"

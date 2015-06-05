@@ -1,7 +1,7 @@
 
 module.exports = (grunt) ->
   grunt.loadTasks("#{__dirname}/../check")
-  
+
   grunt.loadNpmTasks "grunt-extend-config"
 
   grunt.registerTask "steroids-check-project", "Is this a valid Steroids project?", ->
