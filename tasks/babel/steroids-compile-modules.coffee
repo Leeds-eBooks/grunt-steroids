@@ -1,9 +1,5 @@
 module.exports = (grunt) ->
 
-  grunt.log.writeln ['HERE']
-
-  grunt.log.write __dirname
-
   grunt.loadTasks("#{__dirname}/modules")
 
   grunt.registerTask "steroids-compile-modules", "Compile modules in app/ to device-ready files", [
