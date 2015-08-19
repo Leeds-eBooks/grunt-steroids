@@ -14,10 +14,11 @@ module.exports = (grunt)->
     webpack:
       build:
         entry: grunt.file.expand({cwd: modulesPath}, '*').reduce(
-          (obj, module) ->
-            name = path.basename(module)
-            obj[name] = path.join(modulesPath, module, 'index.js')
-            obj
+          (entryObj, module) ->
+            pathArr = [modulesPath, module, 'index.js']
+            if grunt.file.exists pathArr...
+              entryObj[path.basename(module)] = path.join pathArr...
+            entryObj
           {}
         )
         output:
