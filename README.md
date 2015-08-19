@@ -1,4 +1,4 @@
-# grunt-steroids
+# grunt-steroids [![NPM version](http://img.shields.io/npm/v/grunt-steroids.svg)](https://www.npmjs.org/package/grunt-steroids) [![Dependency Status](http://img.shields.io/david/AppGyver/grunt-steroids.svg)](https://david-dm.org/AppGyver/grunt-steroids)
 
 > Steroids CLI default Grunt tasks.
 
@@ -19,12 +19,8 @@ grunt.loadNpmTasks('grunt-steroids');
 
 Note that the above line is included in your Steroids project's default `Gruntfile.js` and is required for `$ steroids connect` to work.
 
-## The "steroids-make" task
+## Releasing
 
-Builds the `dist/` directory that is then packaged and sent to connected devices by Steroids CLI.
-
-## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
-
-## Release History
-_(Nothing yet)_
+1. Update `CHANGELOG.md`
+2. Tag next npm version: `npm version <level>`
+3. Publish: `npm publish`
