@@ -12,3 +12,4 @@ module.exports = (grunt) ->
       'steroids-module-copy-default-native-styles'
       'steroids-module-compile-default-native-styles'
     ]
+  )
