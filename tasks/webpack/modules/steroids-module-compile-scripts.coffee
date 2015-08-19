@@ -1,3 +1,5 @@
+CommonsChunkPlugin = require 'webpack/lib/optimize/CommonsChunkPlugin'
+
 module.exports = (grunt)->
 
   grunt.loadNpmTasks "grunt-extend-config"
