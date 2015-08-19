@@ -7,7 +7,6 @@ module.exports = (grunt)->
   grunt.loadTasks "#{__dirname}/scripts"
 
   modulesPath = path.resolve 'app'
-  commonPath  = path.resolve 'app/common'
 
   grunt.extendConfig
     clean:
@@ -33,7 +32,7 @@ module.exports = (grunt)->
             }
           ]
         plugins: [
-          new CommonsChunkPlugin path.join(commonPath, 'index.js')
+          new CommonsChunkPlugin path.join('common.js')
         ]
 
   grunt.registerTask(
