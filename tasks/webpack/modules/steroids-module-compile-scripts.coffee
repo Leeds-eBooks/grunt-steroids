@@ -1,3 +1,4 @@
+path = require 'path'
 CommonsChunkPlugin = require 'webpack/lib/optimize/CommonsChunkPlugin'
 
 module.exports = (grunt)->
