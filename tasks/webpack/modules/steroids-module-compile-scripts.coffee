@@ -29,8 +29,8 @@ module.exports = (grunt)->
           loaders: [
             {
               test: /\.js$/
-              exclude: /(node_modules|bower_components)/
-              include: /node_modules\/@/
+              exclude: /(node_modules\/^a|bower_components)/
+              # include: /node_modules\/@/
               loader: 'babel'
             }
           ]
