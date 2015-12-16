@@ -17,6 +17,9 @@
   "scripts": {
     "test": "grunt test"
   },
+  "bugs": {
+    "url": "https://github.com/Leeds-eBooks/grunt-steroids/issues"
+  },
   "devDependencies": {
     "grunt": "0.4.5"
   },

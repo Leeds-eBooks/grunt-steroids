@@ -3,7 +3,7 @@
 > Steroids CLI default Grunt tasks.
 
 ## Getting Started
-This plugin requires Grunt `0.4.4`
+This plugin requires Grunt >= `0.4.4`
 
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process and we've published this to the NPM repository, you may install this plugin with this command:
 
@@ -14,10 +14,19 @@ npm install grunt-steroids --save-dev
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-steroids');
+grunt.loadNpmTasks('grunt-steroids')
 ```
 
 Note that the above line is included in your Steroids project's default `Gruntfile.js` and is required for `$ steroids connect` to work.
+
+**To use webpack + babel rather than the default Steroids build task, run steroids with the following commands instead:**
+
+```shell
+steroids connect --gruntTask=webpack
+steroids deploy --gruntTask=webpack
+```
+
+Any problems or suggestions, file an issue in this package’s github issues.
 
 ## Releasing
 
