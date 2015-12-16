@@ -14,10 +14,8 @@ npm install grunt-steroids --save-dev
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-steroids')
+grunt.loadTasks("node_modules/grunt-steroids-webpack/tasks")
 ```
-
-Note that the above line is included in your Steroids project's default `Gruntfile.js` and is required for `$ steroids connect` to work.
 
 **To use webpack + babel rather than the default Steroids build task, run steroids with the following commands instead:**
 
