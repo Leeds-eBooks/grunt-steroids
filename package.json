@@ -1,29 +1,12 @@
 {
-  "name": "grunt-steroids",
-  "description": "Grunt tasks for AppGyver Steroids.",
-  "version": "1.2.0",
+  "name": "grunt-steroids-webpack",
+  "description": "Grunt tasks for AppGyver Steroids using Webpack + Babel",
+  "version": "0.0.1",
   "homepage": "http://www.appgyver.com",
-  "author": "AppGyver <contact@appgyver.com>",
-  "contributors": [
-    {
-      "name": "Harri Sarsa",
-      "email": "harri.sarsa@appgyver.com"
-    },
-    {
-      "name": "Eevert Saukkokoski",
-      "email": "eevert.saukkokoski@appgyver.com"
-    },
-    {
-      "name": "Juha Suuraho",
-      "email": "juha.suuraho@appgyver.com"
-    }
-  ],
+  "author": "Ben Styles <enquiries@leeds-ebooks.co.uk>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/AppGyver/grunt-steroids.git"
-  },
-  "bugs": {
-    "url": "https://github.com/AppGyver/grunt-steroids/issues"
+    "url": "git://github.com/Leeds-eBooks/grunt-steroids.git"
   },
   "licenses": {
     "type": "MIT"
@@ -62,6 +45,12 @@
   "keywords": [
     "gruntplugin",
     "steroids",
-    "appgyver"
+    "supersonic",
+    "appgyver",
+    "webpack",
+    "babel",
+    "es6",
+    "es2015",
+    "modules"
   ]
 }
