@@ -1,4 +1,5 @@
-fs = require 'fs'
+fs   = require 'fs'
+jade = require 'jade'
 
 module.exports = (grunt)->
   snippets = {}
@@ -22,10 +23,10 @@ module.exports = (grunt)->
         expand: true
         cwd: 'app'
         src: [
-          '*/views/**/*.html'
+          '*/views/**/*.{html,jade}'
           '!**/layout.*'
-          '!**/*.android.html'
-          '!**/snippets/**/*.html'
+          '!**/*.android.{html,jade}'
+          '!**/snippets/**/*.{html,jade}'
         ]
         dest: 'dist/app/'
   }
@@ -90,9 +91,17 @@ module.exports = (grunt)->
 
     destinations
 
+  endsWith = (string, search) -> search is '' or string[-search.length..] is search
+
+  parseJadeOrReadHTML = (path) ->
+    if endsWith(path, 'jade')
+      jade.renderFile path
+    else
+      grunt.file.read path
+
   maybeRenderWithLayouts = (source, destination, context, layoutPaths) ->
     for destinationPath, {sourcePath, layoutPath} of determineDestinationLayoutAndSource(destination, source, layoutPaths)
-      content = grunt.util._.template(grunt.file.read sourcePath) {
+      content = grunt.util._.template(parseJadeOrReadHTML sourcePath) {
         yield:
           snippets: snippets
       }
