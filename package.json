@@ -6,7 +6,7 @@
   "author": "Ben Styles <enquiries@leeds-ebooks.co.uk>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/Leeds-eBooks/grunt-steroids.git"
+    "url": "git://github.com/Leeds-eBooks/grunt-steroids.git#Webpack"
   },
   "licenses": {
     "type": "MIT"
