@@ -14,22 +14,24 @@ npm install grunt-steroids-webpack --save-dev
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadTasks("node_modules/grunt-steroids-webpack/tasks")
+grunt.loadNpmTasks("grunt-steroids-webpack")
 ```
 
-**To use webpack + babel + jade (optional) rather than the default Steroids build task, run steroids with the following commands instead:**
+**To use webpack + babel + jade (optional) rather than the default Steroids build task, add the following to your project's `Gruntfile.js`:**
+
+```js
+grunt.registerTask("webpack", [
+  "steroids-make-fresh-webpack"
+])
+```
+
+**and run steroids with the following commands instead:**
 
 ```shell
 steroids connect --gruntTask=webpack
 steroids deploy --gruntTask=webpack
 ```
 
-Any Jade views will be converted to HTML, it is completely fine to have no Jade at all or a mixture of Jade views and HTML views.
+Any Jade views will be converted to HTML (it is completely fine to have no Jade at all or a mixture of Jade views and HTML views).
 
 Any problems or suggestions, file an issue in this package’s github issues.
-
-## Releasing
-
-1. Update `CHANGELOG.md`
-2. Tag next npm version: `npm version <level>`
-3. Publish: `npm publish`
