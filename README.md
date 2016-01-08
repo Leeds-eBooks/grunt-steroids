@@ -1,6 +1,6 @@
-# grunt-steroids [![NPM version](http://img.shields.io/npm/v/grunt-steroids.svg)](https://www.npmjs.org/package/grunt-steroids) [![Dependency Status](http://img.shields.io/david/AppGyver/grunt-steroids.svg)](https://david-dm.org/AppGyver/grunt-steroids)
+# grunt-steroids [![NPM version](http://img.shields.io/npm/v/grunt-steroids-webpack.svg)](https://www.npmjs.org/package/grunt-steroids-webpack) [![Dependency Status](https://img.shields.io/david/Leeds-eBooks/grunt-steroids/Webpack.svg)](https://david-dm.org/Leeds-eBooks/grunt-steroids/Webpack)
 
-> Steroids CLI default Grunt tasks.
+> Steroids CLI Grunt tasks with (optionally) Babel, Webpack and Jade.
 
 ## Getting Started
 This plugin requires Grunt >= `0.4.4`
@@ -17,12 +17,14 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 grunt.loadTasks("node_modules/grunt-steroids-webpack/tasks")
 ```
 
-**To use webpack + babel rather than the default Steroids build task, run steroids with the following commands instead:**
+**To use webpack + babel + jade (optional) rather than the default Steroids build task, run steroids with the following commands instead:**
 
 ```shell
 steroids connect --gruntTask=webpack
 steroids deploy --gruntTask=webpack
 ```
+
+Any Jade views will be converted to HTML, it is completely fine to have no Jade at all or a mixture of Jade views and HTML views.
 
 Any problems or suggestions, file an issue in this package’s github issues.
 
