@@ -115,7 +115,7 @@ module.exports = (grunt)->
     layouts = {}
 
     @files.forEach (file) ->
-      destination = files.dest.replace(/views\//, '').replace('.jade', '.html')
+      destination = file.dest.replace(/views\//, '').replace('.jade', '.html')
       context = extractContextFromFilepath file.dest
 
       for source in file.src
