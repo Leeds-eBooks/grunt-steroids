@@ -1,7 +1,7 @@
 {
   "name": "grunt-steroids-webpack",
   "description": "Grunt tasks for AppGyver Steroids using Webpack + Babel",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "homepage": "http://www.appgyver.com",
   "author": "Ben Styles <enquiries@leeds-ebooks.co.uk>",
   "repository": {
