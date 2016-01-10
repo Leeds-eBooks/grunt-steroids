@@ -1,7 +1,14 @@
 fs   = require 'fs'
 jade = require 'jade'
+path = require 'path'
 
 module.exports = (grunt)->
+  parseJadeOrReadHTML = (filepath) ->
+    if path.extname(filepath) == '.jade'
+      jade.renderFile filepath
+    else
+      grunt.file.read filepath
+
   snippets = {}
   addToObj = (obj, key, value) -> obj[key] = value
 
@@ -12,7 +19,7 @@ module.exports = (grunt)->
         snippetPath.lastIndexOf('/') + 1
         snippetPath.lastIndexOf '.'
       )
-      grunt.file.read snippetPath
+      parseJadeOrReadHTML snippetPath
     )
 
   grunt.loadNpmTasks "grunt-extend-config"
@@ -91,14 +98,6 @@ module.exports = (grunt)->
 
     destinations
 
-  endsWith = (string, search) -> search is '' or string[-search.length..] is search
-
-  parseJadeOrReadHTML = (path) ->
-    if endsWith(path, 'jade')
-      jade.renderFile path
-    else
-      grunt.file.read path
-
   maybeRenderWithLayouts = (source, destination, context, layoutPaths) ->
     for destinationPath, {sourcePath, layoutPath} of determineDestinationLayoutAndSource(destination, source, layoutPaths)
       content = grunt.util._.template(parseJadeOrReadHTML sourcePath) {
@@ -125,5 +124,7 @@ module.exports = (grunt)->
         else
           maybeRenderWithLayouts source, destination, context, [
             "app/#{context.module}/views/layout.html"
+            "app/#{context.module}/views/layout.jade"
             "app/common/views/layout.html"
+            "app/common/views/layout.jade"
           ]
