@@ -12,7 +12,7 @@ module.exports = (grunt)->
   snippets = {}
   addToObj = (obj, key, value) -> obj[key] = value
 
-  for snippetPath in grunt.file.expand ['app/**/snippets/**/*.html']
+  for snippetPath in grunt.file.expand ['app/**/snippets/**/*.{html,jade}']
     addToObj(
       snippets
       snippetPath.substring(
