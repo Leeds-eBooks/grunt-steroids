@@ -62,7 +62,7 @@ module.exports = (grunt)->
   toAndroidFilepath = (filepath) -> filepath.replace /(\.android)?\.html$/, '.android.html'
 
   renderWithLayout = (layoutPath, content, context) ->
-    grunt.util._.template(grunt.file.read layoutPath) {
+    grunt.util._.template(parseJadeOrReadHTML layoutPath) {
       yield:
         view: content
         viewName: context.view
