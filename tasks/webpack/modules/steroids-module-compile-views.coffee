@@ -1,11 +1,12 @@
 fs   = require 'fs'
 jade = require 'jade'
 path = require 'path'
+_    = require 'lodash'
 
 module.exports = (grunt)->
   parseJadeOrReadHTML = (filepath) ->
     if path.extname(filepath) == '.jade'
-      jade.renderFile filepath
+      jade.renderFile filepath, {_: _}
     else
       grunt.file.read filepath
 

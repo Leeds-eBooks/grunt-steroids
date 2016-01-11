@@ -27,7 +27,7 @@
     "ag-resource-loader-raml": "^1.0.0",
     "chalk": "0.3.0",
     "jade": "^1.11.0",
-    "lodash": "2.4.1",
+    "lodash": "~3",
     "wrench": "1.5.4",
     "xml2js": "0.4.4"
   },
