@@ -6,7 +6,10 @@ _    = require 'lodash'
 module.exports = (grunt)->
   parseJadeOrReadHTML = (filepath) ->
     if path.extname(filepath) == '.jade'
-      jade.renderFile filepath, {_: _}
+      jade.renderFile filepath, {
+        _: _
+        pretty: false
+      }
     else
       grunt.file.read filepath
 
