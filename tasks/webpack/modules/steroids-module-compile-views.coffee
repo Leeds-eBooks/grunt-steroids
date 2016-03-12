@@ -70,7 +70,10 @@ module.exports = (grunt)->
       modules: discoverModuleDependencies module
     }
 
-  toAndroidFilepath = (filepath) -> filepath.replace /(\.android)?\.html$/, '.android.html'
+  toAndroidFilepath = (filepath) ->
+    filepath
+      .replace(/(\.android)?\.html$/, '.android.html')
+      .replace(/(\.android)?\.jade$/, '.android.jade')
 
   renderWithLayout = (layoutPath, content, context) ->
     grunt.util._.template(parseJadeOrReadHTML layoutPath) {
