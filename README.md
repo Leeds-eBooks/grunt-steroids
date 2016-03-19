@@ -1,4 +1,4 @@
-# grunt-steroids [![NPM version](http://img.shields.io/npm/v/grunt-steroids-webpack.svg)](https://www.npmjs.org/package/grunt-steroids-webpack) [![Dependency Status](https://img.shields.io/david/Leeds-eBooks/grunt-steroids/Webpack.svg)](https://david-dm.org/Leeds-eBooks/grunt-steroids/Webpack)
+# grunt-steroids-webpack [![NPM version](http://img.shields.io/npm/v/grunt-steroids-webpack.svg)](https://www.npmjs.org/package/grunt-steroids-webpack) [![Dependency Status](https://img.shields.io/david/Leeds-eBooks/grunt-steroids/Webpack.svg)](https://david-dm.org/Leeds-eBooks/grunt-steroids/Webpack)
 
 > Steroids CLI Grunt tasks with (optionally) Babel, Webpack and Jade.
 
@@ -31,6 +31,8 @@ grunt.registerTask("webpack", [
 steroids connect --gruntTask=webpack
 steroids deploy --gruntTask=webpack
 ```
+
+**You also need a `webpack.config.js` in your project root that exports a config object, see [here](http://webpack.github.io/docs/configuration.html#cli) for details.**
 
 Any Jade views will be converted to HTML (it is completely fine to have no Jade at all or a mixture of Jade views and HTML views).
 
